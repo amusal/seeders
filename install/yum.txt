@@ -1,0 +1,9 @@
+# yum-update-repoforge
+
+# using repoforge
+# http://repoforge.org/use
+# find compatible version
+uname -a
+wget http://pkgs.repoforge.org/rpmforge-release/rpmforge-release-0.5.3-1.el6.rf.i686.rpm
+
+rpm -ivh rpmforge-release-0.5.3-1.el6.rf.i686.rpm

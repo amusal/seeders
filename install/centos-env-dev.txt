@@ -1,0 +1,49 @@
+﻿centos环境搭建
+
+1. jdk
+yum install [java-1.6.0-openjdk|java-1.6.0-openjdk-devel]
+
+
+2. weget hadoop
+wget http://mirror.bit.edu.cn/apache/hadoop/common/hadoop-2.2.0/hadoop-2.2.0.tar.gz
+
+
+3. rzsz
+wget http://freeware.sgi.com/source/rzsz/rzsz-3.48.tar.gz
+cp -ri sz rz /usr/bin
+
+4. cmake
+yum cmake cmake-gui
+
+5. gcc-c++
+yum -y install gcc-c++
+
+6. ncurses-devel
+yum install ncurses-devel
+
+7. bison
+yum install bison
+
+8. mysql
+groupadd mysql
+useradd -r -g mysql mysql
+cd $mysql_home
+cmake .
+make && make install
+#若失败则：
+make clean
+rm -f CMakeCache.txt
+#重新make
+#change owner and group
+whereis mysql
+cd /usr/[local|share]/mysql
+chown -R mysql .
+chgrp -R mysql .
+./scripts/mysql_install_db --user=mysql
+chown -R root .
+chgrp -R root .
+chown -R mysql data
+chgrp -R mysql data
+cp support-files/my-medium.cnf /etc/my.cnf
+./bin/mysqld_safe --user=mysql &
+cp support-files/mysql.server /etc/init.d/mysql.server

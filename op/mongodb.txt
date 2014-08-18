@@ -1,0 +1,2 @@
+mongodump ---directoryperdb dbdirectory -h host -d dbname -c collectname 
+mongorestore -h host -d dbname --directoryperdb dbdirecotry

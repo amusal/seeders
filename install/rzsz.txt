@@ -1,0 +1,14 @@
+# download
+wget http://freeware.sgi.com/source/rzsz/rzsz-3.48.tar.gz
+
+tar -zxvf rzsz-3.48.tar.gz
+
+# make
+cd src
+vi Makefile
+
+# line 4:
+change "OFLAG= -O" to "OFLAG= -O -DREGISTERED"
+make posix
+
+cp rz sz /usr/bin

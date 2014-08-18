@@ -1,0 +1,15 @@
+# nginx install
+
+
+# http://nginx.org/en/download.html stable version
+wget http://nginx.org/download/nginx-1.6.0.tar.gz
+tar -zxvf nginx-1.6.0
+
+# check pcre, command below first:
+# yum -y install pcre-devel
+
+./configure
+make && make install
+
+# default install direcctory: /usr/local/nginx
+
