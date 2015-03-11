@@ -1,0 +1,6 @@
+yum not found:
+	python --version ==> python2.7.6
+	whereis python ==> /usr/bin/python2.4
+	
+	vi /usr/bin/yum:
+		#!/usr/bin/python ==> #!/usr/bin/python2.4

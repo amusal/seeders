@@ -12,3 +12,6 @@ change "OFLAG= -O" to "OFLAG= -O -DREGISTERED"
 make posix
 
 cp rz sz /usr/bin
+
+# if '/dev/pts/n: permission denied'
+sudo chmod 777 /dev/pts/n

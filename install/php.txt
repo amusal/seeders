@@ -1,0 +1,53 @@
+php-win32:
+
+1. php: www.php.net
+	unzip
+	cp php.ini-development php.ini
+	vi php.ini:
+		modify:
+			;extension_dir = "ext"
+		to:
+			extension_dir = "d:/phphome/ext"
+		open: (rm ";")
+			;extension=php_curl.dll
+			;extension=php_gd2.dll
+			;extension=php_mbstring.dll
+			;extension=php_mysql.dll
+			;extension=php_xmlrpc.dll
+		modify:
+			;date.timezone =
+		to:
+			date.timezone = Asia/Shanghai
+
+2. apache: httpd.apache.org
+	install
+	vi httpd.conf:
+		add:
+			LoadModule php5_module "D:/phphome/php5apache2_2.dll"
+			PHPIniDir "D:/phphome"
+			AddType application/x-httpd-php .php .html .htm
+		modify:
+			DirectoryIndex index.html
+		to:
+			DirectoryIndex index.php index.html
+		modify:
+			DocumentRoot "D:/Program Files (x86)/Apache2.2/htdocs"
+		to:
+			DocumentRoot "D:/workspace/php"
+		modify:
+			<Directory "D:/Program Files (x86)/Apache2.2/htdocs"
+		to:
+			<Directory "D:/workspace/php"
+
+3. mkdir workspace
+	mkdir -p d:/workspace/php
+	
+4. restart apache
+
+5. test
+	touch d:/workspace/php/index.php:
+		<?php
+			phpinfo()
+		?>
+
+6. http://localhost ok!
