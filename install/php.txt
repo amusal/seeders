@@ -51,3 +51,22 @@ php-win32:
 		?>
 
 6. http://localhost ok!
+
+================================================================
+php5.5:应用程序无法正常启动(0xc0000056):
+
+php5.5使用的编译器是vc11，php5.4和php5.3的是vc9，php5.2是vc6。同时还要注意是x86版本，还是x64版本。目前只有php5.5提供x64版本，其他都只有x86版本。
+
+vc11运行库x86/x64版本：http://www.microsoft.com/en-us/download/details.aspx?id=30679
+vc10运行库x86版本：http://www.microsoft.com/en-us/download/details.aspx?id=5555
+vc10运行库x64版本：http://www.microsoft.com/en-us/download/details.aspx?id=14632
+vc9运行库x86版本：http://www.microsoft.com/en-us/download/details.aspx?id=5582
+vc9运行库x64版本：http://www.microsoft.com/en-us/download/details.aspx?id=15336
+
+
+=========================================================
+yaf:
+http://pecl.php.net/package/yaf
+
+extract php_yaf.dll php_yaf.pdb to $PHP_HOME/ext
+restart apache

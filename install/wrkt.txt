@@ -1,0 +1,3 @@
+# download from: http://www.microsoft.com/en-us/download/details.aspx?id=17657
+# install
+# command format: linkd [mirror] [src]

@@ -1,5 +1,5 @@
 # download
-curl -o https://www.python.org/ftp/python/2.7.6/Python-2.7.6.tgz
+curl -O https://www.python.org/ftp/python/2.7.6/Python-2.7.6.tgz
 tar -zxvf Python-2.7.6.tgz
 
 # compile
@@ -16,10 +16,7 @@ python --version
 
 
 # install pip
-curl -O http://python-distribute.org/distribute_setup.py
-python distribute_setup.py
-
-curl -O https://raw.github.com/pypa/pip/master/contrib/get-pip.py
+curl -O https://bootstrap.pypa.io/get-pip.py
 python get-pip.py
 
-ln /usr/local/python2.7.6/bin/pip.py /usr/bin/pip.py
+ln /usr/local/python2.7.6/bin/pip /usr/bin/pip

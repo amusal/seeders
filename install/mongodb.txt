@@ -19,3 +19,16 @@ mkdir -p /data/mongodb/mongodb_data
 /usr/local/mongodb/mongod &
 
 # uri:  mongodb://user:passwd@host:port,host:port/db
+
+
+shell: 
+=========================================================
+#!/bin/bash
+# shell: mongo_dir/start_mongo.sh
+
+bin_dir=$(cd `dirname $0`; pwd)
+
+$bin_dir/mongod --config=$bin_dir/mongo.conf&
+
+#data_dir='/data/mongodb'
+#/usr/local/mongodb/bin/mongod --bind_ip=0.0.0.0 --pidfilepath=$data_dir/pid --dbpath=$data_dir/mongodb_data/ --logpath=$data_dir/mongodb_log --logappend&
