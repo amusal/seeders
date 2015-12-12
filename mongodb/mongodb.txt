@@ -9,3 +9,5 @@ db.removeUser('name')
 show users
 show dbs
 show collections
+db.collect_name.insert({})
+db.collect_name.find()

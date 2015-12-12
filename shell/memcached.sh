@@ -1,10 +1,8 @@
 #!/bin/bash
 # place 'memcached.sh' in "$MEMCACHED_HOME/bin"
 
-ROOT_DIR=$(cd "`dirname $0`/.."; pwd)
+ROOT_DIR=$(cd '`dirname $0`/..'; pwd)
 cd $ROOT_DIR
-
-OPTION=$1
 
 
 function start() {
@@ -16,7 +14,7 @@ function stop() {
         rm -f bin/pid
 }
 
-case $OPTION in
+case $1 in
 	start)
 		start
 		echo "memcached started"

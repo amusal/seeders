@@ -15,6 +15,7 @@ mkdir -p /data/mongodb/mongodb_data
 #	--auth (open auth function)
 #	--noauth (close auth)
 #	--journal
+#	--fork	# run as deamon
 #	
 /usr/local/mongodb/mongod &
 
@@ -32,3 +33,8 @@ $bin_dir/mongod --config=$bin_dir/mongo.conf&
 
 #data_dir='/data/mongodb'
 #/usr/local/mongodb/bin/mongod --bind_ip=0.0.0.0 --pidfilepath=$data_dir/pid --dbpath=$data_dir/mongodb_data/ --logpath=$data_dir/mongodb_log --logappend&
+
+
+
+
+

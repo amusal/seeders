@@ -1,2 +1,0 @@
-# create project
-mvn archetype:create -DgroupId=com.johnson -DartifactId=app -DpackageName=com.johnson.app
