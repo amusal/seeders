@@ -1,0 +1,2 @@
+libx264:
+	1. git clone git://git.videolan.org/x264.git

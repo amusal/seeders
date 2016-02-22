@@ -1,0 +1,5 @@
+## cut video: $start_time and $stop_time: [n seconds|hh:mm:ss]
+# ffmpeg -i input.mp4 -ss $start_time -t $stop_time -acodec copy -vcodec copy output.mp4
+ffmpeg -i input.mp4 -ss 0 -t 00:25:27 -acodec copy -vcodec copy output.mp4
+
+# ffprobe -i imput.mp4

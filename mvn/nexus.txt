@@ -1,0 +1,44 @@
+install:
+    wget --no-check-certificate http://download.sonatype.com/nexus/oss/nexus-2.12.0-01-bundle.tar.gz
+    tar -zxvf nexus-2.12.0-01-bundle.tar.gz
+    cd nexus-2.12.0-01-bundle/bin
+    ./nexus [start|restart|stop|...]
+
+browse:
+    http://${ip}:8081/nexus
+    login:
+        admin/admin123
+
+use nexus:
+    vi settings.xml:
+<profiles>
+    <profile>
+        <id>nexus</id>
+        <repositories>
+            <repository>
+                <id>nexus</id>
+                <name>Nexus</name>
+                <url>http://${ip}:8081/nexus/content/groups/public/</url>
+                <releases><enabled>true</enabled></releases>
+                <snapshots><enabled>true</enabled></snapshots>
+            </repository>
+        </repositories>
+        <pluginRepositories>
+            <pluginRepository>
+                <id>nexus</id>
+                <name>Nexus</name>
+                <url>http://ip:8081/nexus/content/groups/public/</url>
+                <releases><enabled>true</enabled></releases>
+                <snapshots><enabled>true</enabled></snapshots>
+            </pluginRepository>
+        </pluginRepositories>
+    </profile>
+</profiles>
+<activeProfiles>
+    <activeProfile>nexus</activeProfile>
+</activeProfiles>
+
+reset admin password to admin123：
+    vi ../sonatype-work/nexus/conf/security.xml
+    update user set password='f865b53623b121fd34ee5426c792e5c33af8c227' where id='admin'
+    restart nexus: ../nexus/bin/nexus restart

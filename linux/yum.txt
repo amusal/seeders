@@ -1,9 +1,29 @@
 # yum-update-repoforge
-
+#=====================================================
 # using repoforge
 # http://repoforge.org/use
 # find compatible version
 uname -a
 wget http://pkgs.repoforge.org/rpmforge-release/rpmforge-release-0.5.3-1.el6.rf.i686.rpm
-
 rpm -ivh rpmforge-release-0.5.3-1.el6.rf.i686.rpm
+
+
+# update yum repo source(163 netease source)
+#======================================================
+# backup yum
+mkdir /etc/yum.repos.d/bak
+mv /etc/yum.repos.d/* /etc/yum.repos.d/bak
+# download 
+#centos6
+wget http://mirrors.163.com/.help/CentOS6-Base-163.repo -O /etc/yum.repos.d/CentOS-Base.repo 
+# centos5
+wget http://mirrors.163.com/.help/CentOS5-Base-163.repo -O /etc/yum.repos.d/CentOS-Base.repo
+
+
+# make cache
+yum makecache
+# update
+yum -y update
+# install vim
+yum -y install vim*
+
