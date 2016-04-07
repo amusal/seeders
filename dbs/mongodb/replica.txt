@@ -1,0 +1,25 @@
+config:
+=========================================================
+master:
+#	--master
+#	--oplogSize=4096
+slave:
+#	--slave
+#	--source=10.0.0.1:27017  # master address
+#	--slavedelay=3
+#	--oplogSize=4096
+#	#--only
+#	# --autoresync=true   # force to synchronize
+
+
+auth option opend
+=========================================================
+note:
+1. only manage master
+2. all account will copy to slave
+
+how to:
+for both master and slave:
+1. >> use local
+2. >> db.addUser('repl', 'replication')
+

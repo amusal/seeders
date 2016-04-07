@@ -1,0 +1,14 @@
+mongodump ---directoryperdb dbdirectory -h host -d dbname -c collectname 
+mongorestore -h host -d dbname --directoryperdb dbdirecotry
+
+### mongo shell
+>> mongo --host host --port 27017
+>> use dbname
+>> db.addUser('name', 'pwd')
+>> db.auth('name', 'pwd')
+>> db.removeUser('name')
+>> show users
+>> show dbs
+>> show collections
+>> db.collect_name.insert({})
+>> db.collect_name.find()

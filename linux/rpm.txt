@@ -1,0 +1,38 @@
+wget http://rpm.org/releases/rpm-4.10.x/rpm-4.10.2.tar.bz2
+
+# rpm 依赖的包 
+# nss nss-devel nspr nspr-devel file file-devel  
+# popt popt-devel db4 db4-devel lua-static lua-devel 
+# yum -y install nss nss-devel nspr nspr-devel \ 
+  popt popt-devel db4 db4-devel file file-devel \ 
+  lua-static lua-devel 
+
+# 安装
+# tar xvf rpm-4.10.2.tar.bz2 
+# cd rpm-4.10.2 
+# ./configure --prefix=/opt/rpm \ 
+--with-external-db "CPPFLAGS=-I/usr/include/db4 -I/usr/include/nss3 \ 
+-I/usr/include/nspr4" 
+# make && make install 
+# /opt/rpm/bin/rpm --version
+RPM version 4.10.2
+
+
+# 总结
+configure: error: missing required NSPR / NSS header 
+出现此错误是因为找不到nspr和nss的头文件,安装nss和nspr开发包即可 
+# yum -y install nspr nspr-devel 
+# yum -y install nss nss-devel 
+ 
+configure: error: missing required header magic.h 
+出现此错误是因为找不到magic的头文件,安装file和其开发包即可 
+# yum -y install file file-devel 
+ 
+configure: error: missing required header popt.h 
+出现此错误是因为找不到popt的头文件,安装popt和其开发包即可 
+# yum -y install popt popt-devel 
+ 
+configure: error: internal Berkeley DB directory not present 
+出现此错误是因为找Berkeley db目录不存在,安装db4和其开发包即可 
+ 
+# yum -y install db4 db4-devel 

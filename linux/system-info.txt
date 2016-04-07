@@ -1,0 +1,22 @@
+# os info
+cat /etc/redhat-release
+cat /etc/centos-release
+uname -r
+uname -a
+
+# disk
+df -h
+du -sh
+
+# software package
+cat -n /root/install.log
+
+# meminfo
+cat /proc/meminfo
+vmstat -s
+ps aux --sort -rss
+free -l
+
+# cpuinfo
+cat /proc/cpuinfo
+top

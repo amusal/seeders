@@ -1,0 +1,40 @@
+# download
+wget https://fastdl.mongodb.org/linux/mongodb-linux-x86_64-2.4.10.tgz
+
+tar -zxvf mongodb-linux-x86_64-2.4.10.tgz
+mv mongodb-linux-x86_64-2.4.10 /usr/local/mongodb
+
+mkdir -p /data/mongodb/mongodb_data
+
+# options:
+# 	--bind_ip=0.0.0.0(default is 0.0.0.0)
+#	--port=27017(default is 27017)
+#	--dbpath=/data/mongodb/mongodb_data/
+#	--logpath=/data/mongodb/mongodb_log
+#	--logappend
+#	--auth (open auth function)
+#	--noauth (close auth)
+#	--journal
+#	--fork	# run as deamon
+#	
+/usr/local/mongodb/mongod &
+
+# uri:  mongodb://user:passwd@host:port,host:port/db
+
+
+shell: 
+=========================================================
+#!/bin/bash
+# shell: mongo_dir/start_mongo.sh
+
+bin_dir=$(cd `dirname $0`; pwd)
+
+$bin_dir/mongod --config=$bin_dir/mongo.conf&
+
+#data_dir='/data/mongodb'
+#/usr/local/mongodb/bin/mongod --bind_ip=0.0.0.0 --pidfilepath=$data_dir/pid --dbpath=$data_dir/mongodb_data/ --logpath=$data_dir/mongodb_log --logappend&
+
+
+
+
+

@@ -1,0 +1,22 @@
+# download
+curl -O https://www.python.org/ftp/python/2.7.6/Python-2.7.6.tgz
+tar -zxvf Python-2.7.6.tgz
+
+# compile
+cd Python-2.7.6
+./configure --prefix=/usr/local/python2.7.6
+make && make install
+
+# remove old version python if exists
+# mv /usr/bin/python /usr/bin/python2.x
+ln /usr/local/python2.7.6/bin/python2.7 /usr/bin/python
+
+# test
+python --version
+
+
+# install pip
+curl -O https://bootstrap.pypa.io/get-pip.py
+python get-pip.py
+
+ln /usr/local/python2.7.6/bin/pip /usr/bin/pip

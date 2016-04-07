@@ -1,0 +1,25 @@
+# source: http://httpd.apache.org/
+
+# normal install
+tar -zxvf ...
+cd ...
+./configure --prefix=...
+make && make install
+
+# if error: apr not found
+# should install apr, apr-util, pcre first
+yum remove apr apr-util-devel apr-util-mysql apr-docs apr-devel apr-util apr-util-docs
+# download apr,apr-util from http://apr.apache.org
+# download pcre from https://sourceforge.net/projects/pcre/files/pcre/
+# install apr
+./configure --prefix=$apr_home
+make && make install
+# install apr-util
+./configure --prefix=$apr-util_home --with-apr=$apr_home
+make && make install
+# install pcre
+./configure --prefix=$pcre_home
+make && make install
+# install apache httpd
+./configure --prefix=$httpd_home --with-apr-util=$apr-util_home --with-pcre=$pcre_home
+make && make install

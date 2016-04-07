@@ -1,0 +1,20 @@
+Maven inner properties:
+    Maven:
+        inner:
+            ${basedir}
+            ${version}
+        pom:
+            ${project.build.sourceDirectory} # src/main/java
+            ${project.build.testSourceDirectory} #src/test/java
+            ${project.build.directory} # target
+            ${project.outputDirectory} # target/classes
+            ${project.testOutputDirectory} # target/testclasses
+            ${project.groupId}
+            ${project.artifactId}
+            ${project.version} # =${version}
+            ${project.build.finalName} # ${project.artifactId}${project.version}
+        settings:
+            ${settings.localRepository}
+        env:
+            # mvn help:system
+            ${env.JAVA_HOME}

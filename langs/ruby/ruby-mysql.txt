@@ -1,0 +1,30 @@
+on windows:
+
+# install DevKit 
+
+# mysql connector/c:
+# download mysql connector/c from http://dev.mysql.com/downloads/connector/
+# choose more version, look up:  http://dev.mysql.com/downloads/mirrors.html
+
+# extract connector/c, name its root path as CONNECTOR_HOME
+
+# install mysql2, replace CONNECTOR_HOME with real path
+gem install mysql2 -- '--with-mysql-dir="CONNECTOR_HOME"' 
+
+
+# copy libmysql.dll to bin (lib?) of ruby 
+cp CONNECTOR_HOME\bin\libmysql.dll RUBY_HOME\bin\
+
+
+# config ruby_app/config/database.yml as:
+default: &default
+  adapter: mysql2
+  encoding: utf8
+  pool: 5
+  username: root
+  password: root
+  host: localhost
+
+development:
+  <<: *default
+  database: app_tmp_development

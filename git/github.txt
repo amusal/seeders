@@ -1,0 +1,12 @@
+# generate key
+shell>: ssh-keygen -t rsa # just press 'enter' step by step
+shell>: cat ~/.ssh/id_rsa.pub
+
+# browse url:
+https://github.com/settings/ssh
+
+# add ssh key
+# name a title by self, then put the id_rsa.pub content into textarea
+
+# if all done, try to clone
+shell>: git clone git@github.com:{your_account}/{project}.git

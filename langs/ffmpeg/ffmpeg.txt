@@ -1,0 +1,18 @@
+# source 
+git clone git://source.ffmpeg.org/ffmpeg.git ffmpeg
+
+# configure options:
+# libfaac: 	--enable-libfaac --enable-nonfree
+# libmp3lame:   --enable-libmp3lame
+./configure --enable-libopencore-amrnb --enable-version3  --enable-libfaac --enable-nonfree --enable-libmp3lame
+
+make && make install
+
+declare -x LD_LIBRARY_PATH="/usr/local/lib:/ffmpeg/yasm-1.1.0:/ffmpeg/opencore-amr-0.1.2:/ffmpeg/faac-1.28"
+
+
+# Test audio: ffmpeg -i 20120814164324_205.wav -acodec libfaac -ab 64k -ar 44100  output.aac
+# [-acodec]: 
+# 	pcm_s16le  ---wav
+# 	libfaac    ---aac
+#	libmp3lame ---mp3

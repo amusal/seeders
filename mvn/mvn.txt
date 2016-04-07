@@ -1,0 +1,10 @@
+# create project
+mvn archetype:create -DgroupId=com.johnson -DartifactId=app -DpackageName=com.johnson.app
+
+# import third package
+mvn install:install-file  -Dfile=path-to-your-artifact-jar \  
+                          -DgroupId=your.groupId \  
+                          -DartifactId=your-artifactId \  
+                          -Dversion=version \  
+                          -Dpackaging=jar \  
+                          -DgeneratePom=true  

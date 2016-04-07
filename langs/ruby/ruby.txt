@@ -1,0 +1,34 @@
+on windows x64:
+
+# download from http://rubyinstaller.org/downloads/
+# ruby and devkit
+
+# install ruby
+# extract devkit
+# cd devkit
+ruby dk.rb init
+
+# change sources
+gem sources -r https://rubygems.org/
+gem sources -a https://ruby.taobao.org/
+gem sources -a https://gems.github.com/
+# gem sources -a https://gems.rubyforge.org
+
+# install rails
+gem install rails
+gem install rdiscount --platform=ruby
+
+# use rails
+rails new appname
+cd appname
+rails server
+
+# if found error on windows: TZInfo::DataSourceNotFound
+gem install tzinfo-data
+# vi Gemfile
+# find 'tzinfo-data', replace to: ...platforms: [:mingw, :mswin, :x64_mingw]
+bundle update
+
+# now run command 'rails server', open http://localhost:3000, good luck!
+
+

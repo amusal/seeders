@@ -1,0 +1,7 @@
+## data collect
+flume;
+kafka;
+scribe;
+
+## data synchronized
+sqoop
