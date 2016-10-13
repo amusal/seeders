@@ -10,3 +10,18 @@ https://github.com/settings/ssh
 
 # if all done, try to clone
 shell>: git clone git@github.com:{your_account}/{project}.git
+
+=======================================
+# set proxy
+write """
+Host github github.com
+    HostName github.com
+    User git
+    ProxyCommand connect -S proxy_host:port %h %p
+    IdentityFile ~/.ssh/id_rsa
+"""
+to file ~/.ssh/config
+then test:
+    >> ssh -T git@github.com
+    == Hi! you've successfully authenticated,...
+all is ok!
