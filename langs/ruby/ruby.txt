@@ -29,6 +29,6 @@ gem install tzinfo-data
 # find 'tzinfo-data', replace to: ...platforms: [:mingw, :mswin, :x64_mingw]
 bundle update
 
-# now run command 'rails server', open http://localhost:3000, good luck!
+# now run 'rails server', open http://localhost:3000, good luck!
 
 
