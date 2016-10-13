@@ -1,0 +1,16 @@
+tx-isolation
+----------------------
+problem domain:
+    1. write lost
+    2. read dirty
+    3. non-repeatable read
+        a. virtual read: same row, different data (update)
+        b. phantom read: same read, different row (insert)
+
+resolve: isolation level
+    1. serializable
+        not allow concurrent
+    2. repeatable read
+        allow phantom read, not allow virtual read
+    3. read uncommitted
+        allow phantom and virtual read

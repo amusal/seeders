@@ -1,10 +1,30 @@
 # create project
-mvn archetype:create -DgroupId=com.johnson -DartifactId=app -DpackageName=com.johnson.app
+mvn archetype:generate -DgroupId=com.johnson -DartifactId=app -DpackageName=com.johnson.app -Dinteractive=false
+-DarchetypeArtifactId=[maven-archetype-webapp|maven-archetype-quickstart]
 
-# import third package
+# install file to local
 mvn install:install-file  -Dfile=path-to-your-artifact-jar \  
                           -DgroupId=your.groupId \  
                           -DartifactId=your-artifactId \  
                           -Dversion=version \  
                           -Dpackaging=jar \  
-                          -DgeneratePom=true  
+                          -DgeneratePom=true
+
+# deploy file to server
+mvn deploy:deploy-file -Dfile=path-to-your-artifact-jar \
+                       -DgroupId=your.groupId \
+                       -DartifactId=your-artifactId \
+                       -Dversion=version \
+                       -Dpackaging=jar \
+                       -Durl=repostory.url \
+                       -DrepositoryId=repositoryId
+
+    setting in settings.xml:
+        <server>
+            <id>repositoryId</id>
+            <username>username</username>
+            <password>password</password>
+        </server>
+
+deploy java-source:
+    -Dpackaging=java-source

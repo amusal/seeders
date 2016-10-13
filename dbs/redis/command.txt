@@ -1,0 +1,22 @@
+# telnet localhost 6379
+set <name> <val>
+    set mem.foo 1
+setex <name> <timeout> <val>
+    setex mem.foo 1000 1 (second)
+get <name>
+    get mem.foo
+
+# lock
+setnx <name> <val>
+    setnx lock.foo 123
+        0: fail 1: success
+getset <name> <val>
+    get old value and set new value
+
+# queue
+lpush|rpush <name> <val>
+    lpush queue.foo 123
+lpop|rpop <name>
+    lpop queue.foo
+blpop|brpop <name> <timeout>
+    blpop queue.foo 0 (0 means never timeout)

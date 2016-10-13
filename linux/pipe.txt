@@ -1,0 +1,39 @@
+# |more| less
+cat file|grep '1'|awk '{print $0}'|more
+
+# grep
+    -c: =wc -l
+    -n: with line no.
+    -v: reverse grep
+    -E: escape
+   egrep
+    = grep -E
+
+# awk
+awk '{print $0}'
+
+
+# sort
+#    -g: by general-numeric
+#    -n: by numeric
+#    -h: as human numeric
+#    -r: reverse order
+cat file|awk '{print $0}'|sort|more
+
+# uniq
+#   -c: count
+#   -d: only repeated
+#   -i: ignore case
+#   -u: only unique
+#   -f: skip field number
+cat file |awk '{print $0}' |sort |uniq -c
+
+# wc
+#   -l: lines
+#   -c: bytes
+#   -m: chars
+#   -L: length of max-length line
+#   -w: word
+cat file|wc -l
+
+# sed

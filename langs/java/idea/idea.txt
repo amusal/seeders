@@ -1,0 +1,8 @@
+compile error:
+    multiple encodings set for module chunk 'utf-16le' will be used by compiler
+cause:
+    other encodings set in .idea/encoding.xml under project root directory.
+solve:
+    rm -rf .idea
+    mvn idea:clean
+    reopen project by pom.xml

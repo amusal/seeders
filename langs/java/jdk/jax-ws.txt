@@ -1,0 +1,5 @@
+wsimport:
+    [wsimport -keep -p com.demo.client xxx.wsdl]
+    -keep: keep source java file
+    -p: specified package structure
+    -s: source directory

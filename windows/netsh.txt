@@ -1,0 +1,9 @@
+1. wlan hotspot
+    add hotspot:
+        netsh wlan set hostednetwork mode=allow ssid=wifiName key=wifiPwd
+    share localnetwork:
+        localnetwork->share->allow->choose wifiName
+    start:
+        netsh wlan start hostednetwork
+    stop:
+        netsh wlan stop hostednetwork

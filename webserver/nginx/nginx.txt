@@ -1,6 +1,12 @@
 # nginx install
 
 
+# require pcre, zlib, openssl, gzip, perl
+# download zlib: http://prdownloads.sourceforge.net/libpng/zlib-1.2.8.tar.gz?download
+# download pcre: https://sourceforge.net/projects/pcre/files/pcre/8.39/pcre-8.39.tar.gz/download
+# download openssl: http://openssl.org
+# yum install perl
+
 # http://nginx.org/en/download.html stable version
 wget http://nginx.org/download/nginx-1.6.0.tar.gz
 tar -zxvf nginx-1.6.0
@@ -8,8 +14,38 @@ tar -zxvf nginx-1.6.0
 # check pcre, command below first:
 # yum -y install pcre-devel
 
-./configure
+./configure \
+    --user=nginx --group=nginx \
+    --prefix=/usr/share/nginx \
+    --sbin-path=/usr/sbin/nginx \
+    --conf-path=/etc/nginx/nginx.conf \
+    --error-log-path=/var/log/nginx/error.log \
+    --http-log-path=/var/log/nginx/access.log \
+    --http-client-body-temp-path=/var/lib/nginx/tmp/client_body \
+    --http-proxy-temp-path=/var/lib/nginx/tmp/proxy \
+    --http-fastcgi-temp-path=/var/lib/nginx/tmp/fastcgi \
+    --pid-path=/var/run/nginx.pid \
+    --lock-ath=/var/lock/subsys/nginx \
+    --with-http_ssl_module \
+    --with-http_realip_module \
+    --with-http_addition_module \
+    --with-http_sub_module \
+    --with-http_dav_module \
+    --with-http_flv_module \
+    --with-http_gzip_static_module \
+    --with-http_stb_status_module \
+    --with-http_perl_module \
+    --with-mail \
+    --with-mail_ssl_module \
+    --with-http_geoip_module \
+    --with-openssl=$openssql_make_dir \
+    --with-pcre=$pcre_make_dir \
+    --with-zlib=$zlib_make_dir
 make && make install
 
 # default install direcctory: /usr/local/nginx
+
+
+# install php
+wget http://cn2.php.net/distributions/php-5.6.2.tar.gz
 

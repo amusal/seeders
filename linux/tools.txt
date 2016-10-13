@@ -1,0 +1,8 @@
+# tcpdump
+tcpdump -n -i eth0 [host|dst|src] [net] <host ip> [[or|and] <host ip>] [and|or [tcp|udp]] [and port [!]<port>]
+    -t: no timestamp
+    -s 0: full size package
+    -c: only count
+    net: 192.168.0.1/254
+
+tcpdump -n -i eth0 src localhost and tcp and port !22

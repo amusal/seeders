@@ -1,6 +1,6 @@
 #!/bin/bash
 
-root_dir= $(cd '`dirname $0`/..'; pwd)
+root_dir= $(cd `dirname $0`/..; pwd)
 
 case $1 in
 	start)

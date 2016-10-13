@@ -1,0 +1,11 @@
+generate code:
+    ./webservice.cmd
+    generate code and .wsdd file
+
+deploy:
+    1. install tomcat
+    2. install axis-1.4
+    3. copy axis/webapps/axis to tomcat/webapps/
+    4. copy deploy.wsdd to tomcat/webapps/axis/WEB-INF/
+    5. copy classes to tomat/webapps/axis/WEB-INF/classes
+    5. java -Djava.ext.dirs=%AXIS_HOME%\lib org.apache.axis.client.AdminClient -l http://localhost/axis/services/soapname deploy.wsdd

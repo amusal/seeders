@@ -19,4 +19,9 @@ free -l
 
 # cpuinfo
 cat /proc/cpuinfo
+cat /proc/cpuinfo |grep 'physical id' |sort |wc -l
+cat /proc/cpuinfo |grep 'core id' |sort |wc -l
 top
+
+# mount
+mount -l
