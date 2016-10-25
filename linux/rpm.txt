@@ -1,13 +1,13 @@
 wget http://rpm.org/releases/rpm-4.10.x/rpm-4.10.2.tar.bz2
 
-# rpm ÒÀÀµµÄ°ü 
+# rpm ä¾èµ–çš„åŒ… 
 # nss nss-devel nspr nspr-devel file file-devel  
 # popt popt-devel db4 db4-devel lua-static lua-devel 
 # yum -y install nss nss-devel nspr nspr-devel \ 
   popt popt-devel db4 db4-devel file file-devel \ 
   lua-static lua-devel 
 
-# °²×°
+# å®‰è£…
 # tar xvf rpm-4.10.2.tar.bz2 
 # cd rpm-4.10.2 
 # ./configure --prefix=/opt/rpm \ 
@@ -18,21 +18,21 @@ wget http://rpm.org/releases/rpm-4.10.x/rpm-4.10.2.tar.bz2
 RPM version 4.10.2
 
 
-# ×Ü½á
+# æ€»ç»“
 configure: error: missing required NSPR / NSS header 
-³öÏÖ´Ë´íÎóÊÇÒòÎªÕÒ²»µ½nsprºÍnssµÄÍ·ÎÄ¼ş,°²×°nssºÍnspr¿ª·¢°ü¼´¿É 
+å‡ºç°æ­¤é”™è¯¯æ˜¯å› ä¸ºæ‰¾ä¸åˆ°nsprå’Œnssçš„å¤´æ–‡ä»¶,å®‰è£…nsså’Œnsprå¼€å‘åŒ…å³å¯ 
 # yum -y install nspr nspr-devel 
 # yum -y install nss nss-devel 
  
 configure: error: missing required header magic.h 
-³öÏÖ´Ë´íÎóÊÇÒòÎªÕÒ²»µ½magicµÄÍ·ÎÄ¼ş,°²×°fileºÍÆä¿ª·¢°ü¼´¿É 
+å‡ºç°æ­¤é”™è¯¯æ˜¯å› ä¸ºæ‰¾ä¸åˆ°magicçš„å¤´æ–‡ä»¶,å®‰è£…fileå’Œå…¶å¼€å‘åŒ…å³å¯ 
 # yum -y install file file-devel 
  
 configure: error: missing required header popt.h 
-³öÏÖ´Ë´íÎóÊÇÒòÎªÕÒ²»µ½poptµÄÍ·ÎÄ¼ş,°²×°poptºÍÆä¿ª·¢°ü¼´¿É 
+å‡ºç°æ­¤é”™è¯¯æ˜¯å› ä¸ºæ‰¾ä¸åˆ°poptçš„å¤´æ–‡ä»¶,å®‰è£…poptå’Œå…¶å¼€å‘åŒ…å³å¯ 
 # yum -y install popt popt-devel 
  
 configure: error: internal Berkeley DB directory not present 
-³öÏÖ´Ë´íÎóÊÇÒòÎªÕÒBerkeley dbÄ¿Â¼²»´æÔÚ,°²×°db4ºÍÆä¿ª·¢°ü¼´¿É 
+å‡ºç°æ­¤é”™è¯¯æ˜¯å› ä¸ºæ‰¾Berkeley dbç›®å½•ä¸å­˜åœ¨,å®‰è£…db4å’Œå…¶å¼€å‘åŒ…å³å¯ 
  
 # yum -y install db4 db4-devel 

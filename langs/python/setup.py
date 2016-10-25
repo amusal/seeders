@@ -1,4 +1,4 @@
-'''
+"""
 How to use:
 	1. modified py_modules and other configures;
 	2. cmd/shell=> python setup.py sdist
@@ -8,7 +8,7 @@ Publish to pypi:
 	2. cmd/shell=> python setup.py register
 	note: step 2 only need once, if registered yet, ignore this step
 	3. cmd/shell=> python setup.py sdist upload
-'''
+"""
 
 from distutils.core import setup
 

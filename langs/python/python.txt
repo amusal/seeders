@@ -14,12 +14,16 @@ ln /usr/local/python2.7.6/bin/python2.7 /usr/bin/python
 # test
 python --version
 
-
 # install pip
 curl -O https://bootstrap.pypa.io/get-pip.py
 python get-pip.py
 
+# windows: set env for $PYTHON_HOME/Scripts/
+# linux: ln pip
 ln /usr/local/python2.7.6/bin/pip /usr/bin/pip
+
+# upgrade pip
+pip install --upgrade pip
 
 # compile
 python -m py_compile file.py
