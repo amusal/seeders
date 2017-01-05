@@ -25,3 +25,8 @@ top
 
 # mount
 mount -l
+
+# disk io
+hdparm -Tt /dev/sda1
+time dd if=/dev/zero of=test.dbf bs=1k count=10000000  # test write rate
+time dd if=test.dbf of=/dev/num bs=512 # test read rate

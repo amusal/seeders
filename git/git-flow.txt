@@ -1,0 +1,38 @@
+# install
+-----------------------------------------------------
+# windows MINGW32_NT (git shell:> uname)
+# 1. download
+    http://sourceforge.net/projects/gnuwin32/files/util-linux/2.14.1/util-linux-ng-2.14.1-bin.zip/download
+    http://sourceforge.net/projects/gnuwin32/files/util-linux/2.14.1/util-linux-ng-2.14.1-dep.zip/download
+# 2. copy files below into GIT_HOME/bin/
+    util-linux-ng-2.14.1-bin
+    util-linux-ng-2.14.1-dep/bin/*
+# 3. clone git flow
+    git clone --recursive git://github.com/nvie/gitflow.git
+    cd gitflow
+# 4. update submodules
+    git submodules init
+    git submodules update
+# 5. install (use windows command line)
+# note: replace %GIT_HOME% by your self git installed path
+    cmd> msysgit-install.cmd "GIT_HOME"
+
+
+# useage:
+#   git flow [init|feature|release|hotfix|support]
+-----------------------------------------------------
+# 1. init git flow
+    git flow init
+    # also works in initialized project by git
+# 2. feature
+    git flow feature start f1
+    # action: [branch develop->feature/f1; checkout feature/f1]
+    ### write code and commit
+    git flow feature finish f1
+    # action: [merge f1->develop; checkout develop; branch -d f1]
+# 3. release
+    git flow release start r1
+    # action: [branch develop->r1;]
+
+
+

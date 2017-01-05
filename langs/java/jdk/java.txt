@@ -1,1 +1,24 @@
+# file.encoding
 java -Dfile.encoding=utf-8 jar demo.jar
+
+# use jconsole
+=========================================
+# jvm parameters
+-Dcom.sun.management.jmxremote.port=10001 -Dcom.sun.management.jmxremote.authenticate=true -Dcom.sun.management.jmxremote.ssl=false
+# authenticate setting
+cd jre/lib/management
+# vi jmxremote.access
+monitorRole   readonly
+controlRole   readwrite \
+            create javax.management.monitor.*,javax.management.timer.* \
+            unregister
+# cp jmxremote.password.template jmxremote.password
+monitorRole password
+controlRole password
+# change file mode
+chmod 600 jmxremote.access
+chmod 600 jmxremote.password
+# set hosts if `hostname -i` is '127.0.0.1'
+real_ip localhost
+# client
+jconsole => remoteIp:10001
